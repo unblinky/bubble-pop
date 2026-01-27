@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd5nxssueqosr"]
+[gd_scene format=3 uid="uid://cd5nxssueqosr"]
 
 [ext_resource type="Script" uid="uid://dsvtwfd3gubw8" path="res://Main/Main.gd" id="1_lxy7q"]
+[ext_resource type="AudioStream" uid="uid://balcbhw5gj1bf" path="res://Sfx/pop_03.wav" id="2_83ytx"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=382151424]
 script = ExtResource("1_lxy7q")
+
+[node name="Timer" type="Timer" parent="." unique_id=594423522]
+wait_time = 0.581
+autostart = true
+
+[node name="Sfx" type="AudioStreamPlayer2D" parent="." unique_id=1347200511]
+stream = ExtResource("2_83ytx")
