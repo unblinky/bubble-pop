@@ -2,6 +2,26 @@
 
 [ext_resource type="Script" uid="uid://dsvtwfd3gubw8" path="res://Main/Main.gd" id="1_lxy7q"]
 [ext_resource type="AudioStream" uid="uid://balcbhw5gj1bf" path="res://Sfx/pop_03.wav" id="2_83ytx"]
+[ext_resource type="FontFile" uid="uid://dhes6cbhxkqev" path="res://Fonts/heav.ttf" id="3_amygn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_amygn"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+bg_color = Color(0.20256597, 0.50787264, 0.48400062, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.31569058, 0.011879055, 0.23795673, 0.6)
+shadow_size = 4
+shadow_offset = Vector2(2.26, 3.735)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ps1la"]
+font = ExtResource("3_amygn")
+font_size = 30
+font_color = Color(0.50116336, 0.6496666, 0.54031557, 1)
 
 [node name="Main" type="Node" unique_id=382151424]
 script = ExtResource("1_lxy7q")
@@ -12,3 +32,20 @@ autostart = true
 
 [node name="Sfx" type="AudioStreamPlayer2D" parent="." unique_id=1347200511]
 stream = ExtResource("2_83ytx")
+
+[node name="Scoreboard" type="PanelContainer" parent="." unique_id=1439068544]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.5
+offset_top = 31.0
+offset_right = 24.5
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_amygn")
+
+[node name="ScoreUI" type="Label" parent="Scoreboard" unique_id=173965922]
+layout_mode = 2
+text = "1234567890"
+label_settings = SubResource("LabelSettings_ps1la")
+horizontal_alignment = 1

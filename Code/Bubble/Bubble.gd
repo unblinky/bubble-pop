@@ -3,6 +3,7 @@ class_name Bubble
 
 var main: Main
 var speed: float = -112 # px / sec.
+var point_value: int = 1
 
 func _ready() -> void:
 	input_event.connect(on_clicked)
@@ -21,6 +22,7 @@ func on_clicked(_viewport, event, _shape):
 				print("Mouse down.")
 				main.sfx.play()
 				main.sfx.pitch_scale = randf_range(0.8, 1.2)
+				main.update_scoreboard(point_value)
 				queue_free()
 			else:
 				print("Mouse up.")
